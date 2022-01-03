@@ -6,6 +6,7 @@ const TodosContext = createContext({
     addTodo: (todo) => { },
     deleteTodo: (todo) => { },
     updateTodo: (todo) => { },
+    setTodos: (todos) => { },
     clearAll: () => { }
 })
 
@@ -40,6 +41,9 @@ export function TodosContextProvider(props) {
         setTodos((prevTodos) => {
             let t = [...prevTodos];
             t = t.filter(t => t.id !== todo.id);
+            if (t.length == 0) {
+                localStorage.setItem("lastId", "0");
+            }
             return t;
         })
     }
@@ -54,11 +58,13 @@ export function TodosContextProvider(props) {
 
     const clearAll = () => {
         setTodos([]);
+        localStorage.setItem("lastId", "0");
     }
 
     const context = {
         todos: todos,
         loading: loading,
+        setTodos: setTodos,
         addTodo: addTodo,
         deleteTodo: deleteTodo,
         updateTodo: updateTodo,
