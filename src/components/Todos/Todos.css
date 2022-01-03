@@ -11,29 +11,15 @@
   cursor: move;
 }
 
-.item.drag{
-  opacity: 0.4;
-}
-
-.zero{
-  min-height: 26px;
-  text-decoration: none;
-  list-style: none;
-}
-
-.zero.over,.item.over{
-  border-bottom: 3px solid green;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
 .item:hover {
   background-color: rgb(225, 243, 208);
 }
 
 .list-group {
+  margin-top: 10px;
   margin-bottom: 30px;
 }
+
 
 .content {
   vertical-align: middle;
@@ -63,9 +49,10 @@
   color: salmon;
 }
 
-.checkbox {
+.checkbox{
   margin-right: 8px;
 }
+
 
 @media (max-width: 360px) {
   #button {

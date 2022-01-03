@@ -17,7 +17,7 @@ const Header = () => {
                     <div id='printing'>
                         <ReactToPrint
                             id='print'
-                            trigger={() => <span id='printButton'>Print todo list</span>}
+                            trigger={() => <span id='printButton'>Print list</span>}
                             content={() => componentRef.current}
                         />
                         <div style={{ display: "none" }}>
