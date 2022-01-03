@@ -120,7 +120,7 @@ const Todos = () => {
                             checked={todo.isCompleted}
                             onChange={() => toggleCompleted(todo)}
                         />
-                        <span className='content'>{todo.id} </span>
+                        <span className='content'>{todo.text} </span>
                         <span onClick={() => ctx.deleteTodo(todo)}
                             value='Delete'
                             id='button'
